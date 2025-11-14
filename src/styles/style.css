@@ -1,0 +1,28 @@
+@import url(cores.css);
+@import url(dashboard.css);
+@import url(minhas-reservas.css);
+@import url(reserva.css);
+@import url(contato.css);
+@import url(regras.css);
+@import url(modal-terms.css);
+@import url(painel-aprovaçoes.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+ 
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  min-height: 100vh;
+}
+

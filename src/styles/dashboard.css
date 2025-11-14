@@ -1,0 +1,246 @@
+
+.topo {
+  width: 100%;
+  background-color: #006C35;
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 78px;
+   top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#dashboard{
+  width: 100%;
+  min-height: 100vh;
+  padding: calc(78px + 40px) 8% 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  color: var(--cinza-escuro);
+}
+
+.logo {
+  width: 180px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: var(--branco);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+  color: var(--amarelo-petrobras);
+}
+
+.usuario-info {
+  display: flex;
+  gap: 20px;
+  text-align: right;
+}
+
+.btn-sair{
+    background-color:  #c0392b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+}
+.btn-sair:hover{
+  background-color: #8b291e;
+}
+.btn-sair a{
+  text-decoration: none;
+  color: white;
+}
+
+.usuario-info span {
+  font-weight: 600;
+}
+
+
+
+#conteudo-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 10%;
+  gap: 40px;
+}
+
+.titulo-pagina h1 {
+  color: var(--verde-principal);
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+}
+
+.card {
+  background-color: var(--branco);
+  width: 300px;
+  min-height: 300px;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  color: var(--verde-principal);
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 8px;
+}
+
+.lista-horarios {
+  padding-left: 20px;
+}
+
+.btn-card {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--amarelo-petrobras);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-card a{
+  color: var(--cinza-escuro);
+  text-decoration: none;
+}
+
+.btn-card:hover:not(:disabled) {
+  background-color: var(--verde-claro);
+}
+.btn-card a:hover:not(:disabled) {
+  color: var(--branco);
+}
+
+.btn-card:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.status {
+  font-weight: 600;
+}
+
+.status.disponivel {
+  color: var(--verde-claro);
+}
+
+.status.reservado {
+  color: #c0392b;
+}
+
+ .btn-regras {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background-color:  #c0392b;
+    color: var(--branco);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+  }
+  .btn-regras a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .btn-regras:hover{
+    background-color:  #8b291e;
+  }
+  
+
+@media (max-width: 860px) {
+  .topo {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: auto; 
+    padding: 15px 0;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .usuario-info p {
+    display: none;
+  }
+
+  .menu-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-links a {
+    font-size: 1rem;
+  }
+
+
+    #dashboard{
+        padding-top: 230px;
+    }
+   
+    .titulo-pagina h1 {
+    font-size: 1.5rem;
+  }
+
+   .btn-sair {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    width: auto;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+}

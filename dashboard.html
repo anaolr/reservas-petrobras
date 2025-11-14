@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Sistema de Alocação</title>
+  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+
+  <main>
+  <header class="topo">
+    <div class="logo">
+      <img src="src/imagens/logo.png" alt="Logo Petrobras" class="imagem-logo" />
+    </div>
+
+    <nav>
+      <ul class="menu-links">
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#reserva">Reservar Auditório</a></li>
+        <li><a href="#painel-aprovacoes">Aprovações</a></li>
+        <li><a href="#minhas-reservas">Minhas Reservas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="usuario-info">
+      <p>Bem-vindo(a),<br><span>Usuário</span></p>
+      <button class="btn-sair"><a href="index.html">Sair</a></button>
+    </div>
+  </header>
+
+    <section id="dashboard">
+       <section id="conteudo-principal">
+      <div class="titulo-pagina">
+        <h1>Sistema de Alocação de Auditórios</h1>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h2>Auditório Principal</h2>
+          <p><strong>Capacidade:</strong> 100 pessoas</p>
+          <p><strong>Status:</strong> <span class="status disponivel">Disponível</span></p>
+          <button class="btn-card"><a href="#reserva">Reservar</a></button>
+        </div>
+
+        <div class="card">
+          <h2>Auditório de Treinamento</h2>
+          <p><strong>Capacidade:</strong> 50 pessoas</p>
+          <p><strong>Status:</strong> <span class="status reservado">Reservado</span></p>
+          <button class="btn-card" disabled>Indisponível</button>
+        </div>
+
+        <div class="card">
+          <h2>Horários de Funcionamento</h2>
+          <p><strong>Segunda a Sábado</strong></p>
+          <ul class="lista-horarios">
+            <li>Manhã: 08h às 12h</li>
+            <li>Tarde: 13h às 17h</li>
+            <li>Noite: 18h às 22h</li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="btn-regras"><a href="#regras">Regras e Antecedências</a></button>
+    </section>
+    </section>
+
+    <section id="reserva">
+      <div class="title-section">
+        <h1>Reservar Auditório</h1>
+      </div>
+
+      <form>
+        <div class="title-form">
+          <h2>Formulário de Reserva</h2>
+        </div>
+
+        <div class="campos-form">
+          <label for="evento">Nome do evento</label>
+          <input type="text" id="evento" placeholder="Digite o nome do evento" required>
+
+          <label for="responsavel">Responsável</label>
+          <input type="text" id="responsavel" placeholder="Nome do responsável" required>
+
+          <label for="quantidade">Quantidade de pessoas</label>
+          <input type="number" id="quantidade" placeholder="Ex: 50" min="1" required>
+
+          <label for="tipo">Tipo de evento</label>
+          <input type="text" id="tipo" placeholder="Reunião, Treinamento..." required>
+
+          <label for="recursos">Recursos necessários</label>
+          <textarea id="recursos" placeholder="Projetor, microfone, etc."></textarea>
+
+<label for="participantes">Lista de participantes (opcional)</label>
+<textarea id="participantes" placeholder="Digite os nomes, se desejar"></textarea>
+
+
+          <label for="auditorio">Auditório desejado</label>
+          <select id="auditorio" required>
+            <option value="" disabled selected>Selecione o auditório</option>
+            <option value="principal">Auditório Principal</option>
+            <option value="treinamento">Auditório de Treinamento</option>
+          </select>
+
+          <label for="data">Data e turno</label>
+          <input type="date" id="data" required>
+
+          <select id="turno" required>
+            <option value="" disabled selected>Selecione o turno</option>
+            <option value="manha">Manhã (08h às 12h)</option>
+            <option value="tarde">Tarde (13h às 17h)</option>
+            <option value="noite">Noite (18h às 22h)</option>
+          </select>
+        </div>
+
+        <div class="botoes-form">
+          <button type="submit" class="btn-enviar" id="btnAbrirTermos">Enviar Reserva</button>
+          <button type="reset" class="btn-limpar">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- MODAL DE TERMOS E POLÍTICAS  -(ESCONDIDO)-->
+<div id="modal-termos" class="modal-termos hidden">
+  <div class="modal-conteudo">
+    <h1>Termos e Políticas de Utilização</h1>
+
+    <h2>Hierarquia de Prioridades</h2>
+    <ol>
+      <li><strong>Eventos de Segurança Operacional:</strong> prioridade máxima — realocam reservas existentes.</li>
+      <li><strong>Treinamentos Obrigatórios:</strong> programas de capacitação requeridos.</li>
+      <li><strong>Reuniões Corporativas:</strong> envolvendo diretorias e gerências.</li>
+      <li><strong>Demais Eventos:</strong> apresentações, workshops e outras atividades.</li>
+    </ol>
+
+    <h2>Políticas de Segurança</h2>
+    <ul>
+      <li>Autenticação via sistema corporativo PETROBRAS.</li>
+      <li>Crachá obrigatório para entrada nos auditórios.</li>
+      <li>Registro completo de todos os participantes.</li>
+      <li>Monitoramento contínuo por câmeras internas.</li>
+    </ul>
+
+    <h2>Normas de Utilização</h2>
+    <ul>
+      <li>Proibido consumo de alimentos nos auditórios.</li>
+      <li>Equipamentos só podem ser operados por pessoal autorizado.</li>
+      <li>Danos ao patrimônio serão cobrados do responsável pela reserva.</li>
+      <li>Os horários de encerramento devem ser rigorosamente cumpridos.</li>
+    </ul>
+
+    <div class="confirmacao-termos">
+      <label>
+        <input type="checkbox" id="aceito-termos">
+        Li e concordo com as políticas acima.
+      </label>
+      <div class="botoes-termos">
+        <button id="btnCancelarTermos" class="btn-regras">Cancelar</button>
+        <button id="btnConfirmarTermos" class="btn-card" disabled>Confirmar Reserva</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <section id="minhas-reservas">
+      <div class="titles-minhas-reservas">
+        <h1>Minhas Reservas</h1>
+        <h2>Acompanhe e gerencie suas reservas de auditórios</h2>
+      </div>
+      <div id="tabela-reservas">
+         <table>
+        <thead>
+          <tr>
+            <th>Evento</th>
+            <th>Auditório</th>
+            <th>Data</th>
+            <th>Turno</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Treinamento NR-10</td>
+            <td>Principal</td>
+            <td>15/11/2025</td>
+            <td>Manhã</td>
+            <td><span class="status-aprovado">Aprovado</span></td>
+            <td>
+              <button class="btn-editar">Editar</button>
+              <button class="btn-cancelar">Cancelar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Workshop Técnico</td>
+            <td>Treinamento</td>
+            <td>20/11/2025</td>
+            <td>Tarde</td>
+            <td><span class="status-pendente">Pendente</span></td>
+            <td>
+              <button class="btn-editar">Editar</button>
+              <button class="btn-cancelar">Cancelar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Reunião Corporativa</td>
+            <td>Principal</td>
+            <td>22/11/2025</td>
+            <td>Noite</td>
+            <td><span class="status-cancelado">Cancelado</span></td>
+            <td>
+              <button class="btn-editar" disabled>Editar</button>
+              <button class="btn-cancelar" disabled>Cancelar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div id="title-principal">
+        <h1>Suporte e Emergências</h1>
+      </div>
+      <div id="tabela-contato">
+       <table>
+  <thead>
+    <tr>
+      <th>Situação</th>
+      <th>Contato</th>
+      <th>Horário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Problemas técnicos</td>
+      <td>TI Corporativo: 3000</td>
+      <td>24 horas</td>
+    </tr>
+    <tr>
+      <td>Emergências</td>
+      <td>Segurança: 191</td>
+      <td>24 horas</td>
+    </tr>
+    <tr>
+      <td>Dúvidas sobre reservas</td>
+      <td>Administração: 3001</td>
+      <td>Horário comercial</td>
+    </tr>
+  </tbody>
+</table>
+
+       
+      </div>
+
+    </section>
+
+    <section id="regras">
+
+      <div id="title-principal">
+        <h1>Regras e Antecedências</h1>
+      </div>
+      <div id="tabela-regras">
+        <table>
+  <thead>
+    <tr>
+      <th>Ação</th>
+      <th>Prazo Mínimo</th>
+      <th>Observações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reserva</td>
+      <td>48 horas úteis</td>
+      <td>Para planejamento adequado</td>
+    </tr>
+    <tr>
+      <td>Cancelamento</td>
+      <td>72 horas</td>
+      <td>Evitar ociosidade do espaço</td>
+    </tr>
+    <tr>
+      <td>Modificações</td>
+      <td>24 horas</td>
+      <td>Sujeita à disponibilidade</td>
+    </tr>
+  </tbody>
+</table>
+
+       
+      </div>
+
+    </section>
+
+    <section id="painel-aprovacoes" >
+  
+  <div class="titles-aprovações"> 
+    <h1>Painel de Aprovações</h1>
+    <h2>Gerencie as reservas pendentes de todas as equipes</h2>
+  </div>
+
+  <div id="tabela-aprovacoes"> 
+    <table>
+      <thead>
+        <tr>
+          <th>Evento</th>
+          <th>Solicitante</th> <th>Auditório</th>
+          <th>Data</th>
+          <th>Turno</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>Reunião Alinhamento Q4</td>
+          <td>Ana Silva (Coord.)</td>
+          <td>Principal</td>
+          <td>30/11/2025</td>
+          <td>Manhã</td>
+          <td><span class="status-pendente">Pendente</span></td> 
+          <td>
+            <button class="btn-aprovar">Aprovar</button>
+            <button class="btn-reprovar">Reprovar</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Treinamento Téc. (Instr.)</td>
+          <td>Carlos Braga (Instrutor)</td>
+          <td>Treinamento</td>
+          <td>02/12/2025</td>
+          <td>Tarde</td>
+          <td><span class="status-pendente">Pendente</span></td>
+          <td>
+            <button class="btn-aprovar">Aprovar</button>
+            <button class="btn-reprovar">Reprovar</button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</section>
+  </main>
+
+  <script src="src/javascript/modal.js"></script>
+
+</body>
+</html>

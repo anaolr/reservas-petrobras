@@ -1,0 +1,162 @@
+
+#minhas-reservas {
+  background-color: var(--amarelo-petrobras);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(78px + 40px) 8% 60px;
+  gap: 50px;
+  color: var(--verde-principal);
+  padding-top: 200px;
+}
+
+.titles-minhas-reservas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titles-minhas-reservas h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.titles-minhas-reservas h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color:var(--cinza-escuro);
+}
+
+#tabela-reservas {
+  width: 100%;
+  max-width: 1000px;
+  background-color: var(--branco);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--verde-principal);
+  color: var(--branco);
+  font-weight: 600;
+}
+
+thead th {
+  padding: 15px;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--cinza-claro);
+  transition: background 0.3s;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+tbody td {
+  padding: 15px;
+  color: var(--cinza-escuro);
+}
+
+
+.status-aprovado {
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--verde-claro);
+  color: var(--branco);
+}
+
+.status-pendente {
+    font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--amarelo-petrobras);
+  color: var(--cinza-escuro);
+}
+
+.status-cancelado {
+    font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #c0392b;
+  color: var(--branco);
+}
+
+
+.btn-editar {
+    padding: 8px 14px;
+  border: none;
+  border-radius: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: var(--amarelo-petrobras);
+  color: var(--cinza-escuro);
+}
+
+.btn-editar:hover {
+  background-color: var(--verde-claro);
+  color: var(--branco);
+}
+
+.btn-cancelar {
+    padding: 8px 14px;
+  border: none;
+  border-radius: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color:  #c0392b;
+  color: var(--branco);
+}
+
+.btn-cancelar:hover {
+  opacity: 0.6;
+}
+
+.btn-editar:disabled,
+.btn-cancelar:disabled,
+.btn-editar:disabled:hover {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+   opacity: 1;
+}
+
+@media (max-width: 860px){
+  #minhas-reservas{
+    padding-top: 300px;
+  }
+
+
+  #tabela-reservas {
+    overflow-x: auto; 
+  }
+
+  thead th,
+  tbody td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .titles-minhas-reservas h1 {
+    font-size: 1.5rem;
+  }
+
+  .titles-minhas-reservas h2 {
+    font-size: 0.9rem;
+  }
+  
+}
