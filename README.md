@@ -137,8 +137,6 @@ O sistema então:
 
 ---
 
----
-
 ## 🧠 **Regras de Negócio Implementadas no Front-End**
 
 - Botão de confirmação só habilita após aceitar termos  
